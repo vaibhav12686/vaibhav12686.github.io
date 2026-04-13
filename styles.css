@@ -15,3 +15,90 @@
 .chandola:hover{
   color: white;
 }
+
+
+
+
+/* BACKDROP */
+.cert-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+/* MAIN CONTAINER */
+.cert-container {
+    width: 95%;
+    max-width: 1200px;
+    height: 85vh;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+}
+
+/* LEFT PANEL */
+.cert-left {
+    width: 35%;
+    border-right: 1px solid #e5e7eb;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f9fafb;
+}
+
+/* LIST WRAPPER */
+.cert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* BUTTONS */
+.cert-btn {
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: white;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cert-btn:hover {
+    background: #f1f5f9;
+}
+
+.cert-btn.active {
+    background: #e0f2fe;
+    border-color: #38bdf8;
+}
+
+/* RIGHT PANEL */
+.cert-right {
+    width: 65%;
+    position: relative;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* PDF VIEWER */
+.cert-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
