@@ -47,12 +47,21 @@ type();
 
 
 function openCertModal() {
-    document.getElementById('certModal').classList.remove('hidden');
+    const modal = document.getElementById('certModal');
+
+    modal.classList.add('show');
     loadCert('./certificates/cert1.pdf');
+
+    const firstBtn = document.querySelector('.cert-btn');
+    if (firstBtn) {
+        document.querySelectorAll('.cert-btn').forEach(b => b.classList.remove('active'));
+        firstBtn.classList.add('active');
+    }
 }
 
 function closeCertModal() {
-    document.getElementById('certModal').classList.add('hidden');
+    const modal = document.getElementById('certModal');
+    modal.classList.remove('show');
 }
 
 function loadCert(file) {
@@ -68,7 +77,6 @@ function selectCert(button, file) {
     button.classList.add('active');
     loadCert(file);
 }
-
 
 
 
