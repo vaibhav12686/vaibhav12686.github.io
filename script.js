@@ -48,19 +48,26 @@ type();
 
 function openCertModal() {
     document.getElementById('certModal').classList.remove('hidden');
-    document.getElementById('certModal').classList.add('flex');
-    loadCert('certificates/cert1.pdf'); // load first PDF by default
+    loadCert('./certificates/cert1.pdf');
 }
 
 function closeCertModal() {
     document.getElementById('certModal').classList.add('hidden');
-    document.getElementById('certModal').classList.remove('flex');
 }
 
 function loadCert(file) {
     document.getElementById('certViewer').src = file;
 }
 
+function selectCert(button, file) {
+
+    document.querySelectorAll('.cert-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    button.classList.add('active');
+    loadCert(file);
+}
 
 
 
