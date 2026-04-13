@@ -120,3 +120,93 @@
                 
               
                 <div class="flex items-center gap-x-4">
+
+                    
+                    <!-- Mobile menu button -->
+                    <button onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 flex items-center justify-center text-slate-700">
+                        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden px-8 py-6 border-t bg-white">
+                <div class="flex flex-col gap-y-6 text-slate-700 font-medium text-lg">
+                    <a onclick="smoothScrollTo('about')" class="nav-link cursor-pointer text-base">ABOUT</a>
+                    <a onclick="smoothScrollTo('experience')" class="nav-link cursor-pointer text-base">EXPERIENCE</a>
+                    <a onclick="smoothScrollTo('projects')" class="nav-link cursor-pointer text-base">PROJECTS</a>
+                    <a onclick="smoothScrollTo('skills')" class="nav-link cursor-pointer text-base">SKILLS</a>
+                    <a onclick="smoothScrollTo('education')" class="nav-link cursor-pointer text-base">EDUCATION</a>
+                    <a onclick="openCertModal()" class="nav-link cursor-pointer text-xl">CERTIFICATION</a>
+                    <a onclick="openResume()" class="nav-link cursor-pointer text-base">RESUME</a>
+                    
+                    <div class="pt-6 border-t flex flex-col gap-y-4">
+                        <a href="https://github.com/vaibhav12686" target="_blank" class="flex items-center justify-center gap-x-3 py-4 border rounded-3xl text-slate-700 font-semibold">
+                            <span>View on GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/vaibhav-chandola-30b3941bb/" target="_blank" class="flex items-center justify-center gap-x-3 py-4 bg-sky-600 text-white rounded-3xl font-semibold">
+                            <span>Connect on LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+  
+  
+  
+  
+  
+  
+  
+  
+<!-- CERTIFICATION -->
+<div id="certModal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
+    
+    <div class="bg-white w-full max-w-6xl h-[85vh] mx-4 rounded-3xl flex overflow-hidden">
+        
+        <!-- LEFT: Certificate List -->
+        <div class="w-1/3 border-r p-6 overflow-y-auto">            
+            <div class="space-y-3">
+
+                <button onclick="loadCert('certificates/cert1.pdf')" 
+                        class="w-full text-left p-3 border rounded-xl hover:bg-slate-100">
+                    Machine Learning Using Python Programming
+                </button>
+
+                <button onclick="loadCert('certificates/cert2.pdf')" 
+                        class="w-full text-left p-3 border rounded-xl hover:bg-slate-100">
+                    Introduction to Modern Database Systems
+                </button>
+
+                <button onclick="loadCert('certificates/cert3.pdf')" 
+                        class="w-full text-left p-3 border rounded-xl hover:bg-slate-100">
+                    Practical Time Series Analysis
+                </button>
+              
+                <button onclick="loadCert('certificates/cert4.pdf')" 
+                        class="w-full text-left p-3 border rounded-xl hover:bg-slate-100">
+                    Algorithms for Searching, Sorting and Indexing
+                </button>
+              
+                <button onclick="loadCert('certificates/cert5.pdf')" 
+                        class="w-full text-left p-3 border rounded-xl hover:bg-slate-100">
+                    Programming for Everybody (Python)
+                </button>   
+            
+            </div>
+        </div>
+
+        <!-- RIGHT: PDF Viewer -->
+        <div class="w-2/3 relative">
+            <button onclick="closeCertModal()" 
+                    class="absolute top-4 right-4 bg-white px-3 py-1 rounded shadow">
+                ✕
+            </button>
+            <iframe id="certViewer" class="w-full h-full"></iframe>
+        </div>
+
+    </div>
+</div>
