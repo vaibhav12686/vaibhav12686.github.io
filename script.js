@@ -1,85 +1,79 @@
-const words = [
-  "Pythonist",
-  "Quantitative Thinker",
-  "Developer",
-  "Researcher",
-  "Data Storyteller"
-];
 
-const animatedText = document.getElementById("animated-text");
-let wordIndex = 0;
-let charIndex = 0;
-let typing = true;
+// TYPEWRITER + DELETE EFFECT
 
-function type() {
-    const currentWord = words[wordIndex];
+(function () {
+    const el = document.getElementById("animated-text");
+    if (!el) return;
 
-    if (typing) {
-        animatedText.textContent = currentWord.slice(0, charIndex + 1);
-        charIndex++;
-        if (charIndex === currentWord.length) {
-            typing = false;
-            setTimeout(type, 1000); // Wait before deleting
+    const words = ["PYTHONIST", "DEVELOPER", "DATA STORYTELLER", "LEARNER"];
+
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+        const currentWord = words[wordIndex];
+
+        if (!isDeleting) {
+            // typing forward
+            el.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+
+            if (charIndex === currentWord.length) {
+                isDeleting = true;
+                setTimeout(typeEffect, 1200); 
+                return;
+            }
         } else {
-            setTimeout(type, 150); // Typing speed
+            // 
+            el.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+
+            if (charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+            }
         }
-    } else {
-        animatedText.textContent = currentWord.slice(0, charIndex - 1);
-        charIndex--;
-        if (charIndex === 0) {
-            typing = true;
-            wordIndex = (wordIndex + 1) % words.length;
-            setTimeout(type, 500); // Pause before typing next word
-        } else {
-            setTimeout(type, 100); // Deleting speed
-        }
+
+        const speed = isDeleting ? 60 : 120;
+        setTimeout(typeEffect, speed);
     }
+
+    
+    window.addEventListener("load", () => {
+        setTimeout(typeEffect, 500);
+    });
+})();
+
+
+
+// MOBILE MENU
+
+function toggleMobileMenu() {
+    const menu = document.getElementById("mobile-menu");
+    if (!menu) return;
+    menu.classList.toggle("hidden");
 }
 
-type();
 
 
-
-
-
-
-
-
+// CERT MODAL
 
 function openCertModal() {
-    const modal = document.getElementById('certModal');
-
-    modal.classList.add('show');
-    loadCert('./certificates/cert1.pdf');
-
-    const firstBtn = document.querySelector('.cert-btn');
-    if (firstBtn) {
-        document.querySelectorAll('.cert-btn').forEach(b => b.classList.remove('active'));
-        firstBtn.classList.add('active');
-    }
+    const modal = document.getElementById("certModal");
+    if (!modal) return;
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
 }
 
 function closeCertModal() {
-    const modal = document.getElementById('certModal');
-    modal.classList.remove('show');
+    const modal = document.getElementById("certModal");
+    if (!modal) return;
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
 }
 
 function loadCert(file) {
-    document.getElementById('certViewer').src = file;
+    const viewer = document.getElementById("certViewer");
+    if (viewer) viewer.src = file;
 }
-
-function selectCert(button, file) {
-
-    document.querySelectorAll('.cert-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-
-    button.classList.add('active');
-    loadCert(file);
-}
-
-
-
-
-
-
