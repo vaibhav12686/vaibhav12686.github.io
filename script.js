@@ -77,3 +77,11 @@ function loadCert(file) {
     const viewer = document.getElementById("certViewer");
     if (viewer) viewer.src = file;
 }
+
+
+
+// RESUME
+
+function openResume() {
+    window.open("resume.pdf", "_blank");
+}
