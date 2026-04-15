@@ -85,3 +85,13 @@ function loadCert(file) {
 function openResume() {
     window.open("resume.pdf", "_blank");
 }
+
+
+
+// SMOOTH SCROLL
+
+function smoothScrollTo(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth" });
+}
