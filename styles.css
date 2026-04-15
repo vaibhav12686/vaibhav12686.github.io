@@ -4,8 +4,8 @@
     --tw-color-primary: #0ea5e9;
 }
 
-/* GLOBAL RESET */
 
+/* GLOBAL RESET */
 * {
     box-sizing: border-box;
 }
@@ -14,15 +14,29 @@ body {
     font-family: 'Roboto Mono', monospace;
 }
 
-/* HERO BACKGROUND */
 
+/* HERO BACKGROUND */
 .hero-bg {
     background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
 }
 
+/* SECTION HEADER LINE */
+.section-header {
+    position: relative;
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    width: 64px;
+    height: 3px;
+    background-color: #0ea5e9;
+    bottom: -6px;
+    left: 0;
+}
+
 
 /* NAV LINK ANIMATION */
-
 .nav-link {
     position: relative;
 }
@@ -43,20 +57,58 @@ body {
 
 
 
-/* HERO NAME SHIMMER */
+/* CARD HOVER EFFECTS */
+.card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+                0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.project-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+    transform: scale(1.03);
+}
+
+
+
+/* ANIMATION */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-in {
+    animation: fadeInUp 0.6s backwards;
+}
+
+
+
+/* HERO NAME SHIMMER */
 #hero-name-last {
-    font-size: 6rem;
+    font-size: 10rem;
     font-weight: 900;
     line-height: 1;
     display: inline-block;
-    color: #A9A9A9;
+    color: #a3a0be;
     transition: transform 0.3s ease;
 }
 
 #hero-name-last:hover {
     color: white;
-    transform: translateX(2px);
+    transform: translateX(6px);
 }
 
 
@@ -67,6 +119,7 @@ body {
 }
 
 
+
 /* blinking cursor */
 .cursor {
     display: inline-block;
@@ -74,7 +127,7 @@ body {
     height: 1em;
     background: white;
     margin-left: 4px;
-    animation: blink 0.9s infinite;
+    animation: blink 2s infinite;
 }
 
 @keyframes blink {
@@ -85,3 +138,94 @@ body {
 
 
 
+/* RIGHT SIDE SOCIAL BUTTONS */
+.circle {
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9999px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    cursor: pointer;
+    text-decoration: none;
+
+    transition: transform 0.6s ease, background 0.3s ease, border 0.3s ease;
+}
+
+.circle:hover .icon {
+    transform: rotate(360deg);
+    transition: transform 0.6s ease;
+}
+
+
+
+
+
+
+
+/* icon inside circle */
+.icon {
+    width: 26px;
+    height: 26px;
+    display: block;
+    color: white;
+}
+
+
+/* RIGHT SIDE LAYOUT FIX */
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+
+/* MOBILE RESPONSIVE FIX */
+@media (max-width: 768px) {
+    .circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .hero-right {
+        flex-direction: row;
+        justify-content: center;
+        gap: 16px;
+    }
+}
+
+
+
+#animated-text {
+    display: inline-flex;   
+    width: fit-content;     
+    white-space: nowrap;
+}
+
+.role-text {
+    font-size: 1.7rem;
+    color: #f4f7ff;
+    white-space: nowrap;
+    font-weight: 400;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.desc-text {
+    max-width: 520px;       
+    font-size: 1.20rem;     
+    color: #cbd5e1;
+    line-height: 1.6;
+    font-weight: 300;    
+}
