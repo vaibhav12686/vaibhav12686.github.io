@@ -106,10 +106,21 @@
     <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-screen-2xl mx-auto">
             <div class="px-8 py-5 flex items-center justify-between">
+
                 <!-- Logo / Name -->
                 <div class="flex items-center gap-x-3">
-                    <div class="w-9 h-9 bg-sky-500 rounded-2xl flex items-center justify-center text-white text-xl font-bold heading-font">VC</div>
-                    <a href="#" class="text-2xl font-semibold tracking-[-0.5px] heading-font text-slate-900"> PORTFOLIO</a>
+
+                    <!-- IMAGE IN PLACE OF VC -->
+                    <div class="w-9 h-9 rounded-2xl overflow-hidden bg-sky-500 flex items-center justify-center">
+                        <img src="images/profile.png" 
+                             class="w-full h-full object-cover"
+                             style="transform: scale(1.05);" 
+                             alt="Profile">
+                    </div>
+
+                    <a href="#" class="text-2xl font-semibold tracking-[-0.5px] heading-font text-slate-900">
+                        PORTFOLIO
+                    </a>
                 </div>
                 
                 <!-- Desktop Navigation -->
@@ -444,7 +455,7 @@
                 <div class="p-8">
                     <div class="uppercase text-xs font-medium tracking-widest text-emerald-500 mb-2">Python • ML • SHAP/LIME</div>
                     <h3 class="text-2xl font-semibold mb-4">Multi Class Classification - CIC IOV dataset</h3>
-                    <p class="text-slate-600 text-base line-clamp-4">A multi-class IoV classification system using optimized feature selection and machine learning, combined with SHAP and LIME to ensure interpretable and transparent decision-making for smart transportation applications.</p>
+                    <p class="text-slate-600 text-base line-clamp-4">A multi-class IoV classification system using optimized feature selection, machine learning, and SHAP/LIME for interpretable and transparent smart transportation decisions.</p>
                     <div class="mt-8 flex justify-between items-end">
                         <a href="https://github.com/vaibhav12686/CIC-IOV-2024-multi-class-classification" target="_blank" rel="noopener noreferrer" class="text-sky-600 font-medium flex items-center gap-x-2">
                             View on GitHub 
@@ -633,35 +644,42 @@
                 <div class="text-slate-400">2024 — 2026</div>
                 <div class="text-3xl font-semibold mt-3">MCA (Data Science) </div>
                 <div class="text-xl text-slate-600">Bennett University</div>
-                <div class="mt-4 text-slate-500"> - - -  </div>
+                <div class="mt-4 text-slate-500">Data Structures, Analysis of Algorithms, Data Analysis, Data Mining, Time Series Analysis, Operating Systems, System Designs, Computer Networks</div>
             </div>
             
           
         </div>
     </section>
     
-    <!-- FOOTER / FINAL CTA -->
-    <footer class="bg-slate-950 text-white py-16">
-        <div class="max-w-screen-2xl mx-auto px-8">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-y-8">
-                <div>
-                    <div class="flex items-center gap-x-3">
-                        <div class="w-9 h-9 bg-sky-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold heading-font">VC</div>
-                        <span class="text-3xl font-semibold heading-font">Vaibhav Chandola</span>
+ <!-- FOOTER / FINAL CTA -->
+<footer class="bg-slate-950 text-white py-16">
+    <div class="max-w-screen-2xl mx-auto px-8">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-y-8">
+            <div>
+                <div class="flex items-center gap-x-3">
+
+                    <!-- VC replaced with image -->
+                    <div class="w-9 h-9 rounded-2xl overflow-hidden bg-sky-500 flex items-center justify-center">
+                        <img src="images/profile.png" 
+                             class="w-full h-full object-cover scale-105" 
+                             alt="Profile">
                     </div>
-                </div>
-                
-                <div class="text-center md:text-right">
-                    <div class="flex justify-center md:justify-end gap-x-8 text-2xl mb-8">
-                        <a href="https://github.com/vaibhav12686" target="_blank" class="hover:text-sky-400">GitHub</a>
-                        <a href="https://www.linkedin.com/in/vaibhav-chandola-30b3941bb/" target="_blank" class="hover:text-sky-400">LinkedIn</a>
-                        <a href="mailto:aish.allada@gmail.com" class="hover:text-sky-400">Email</a>
-                    </div>
-                    <p class="text-xs text-slate-500">© 2026 Vaibhav Chandola - Designed & Developed</p>
+
+                    <span class="text-3xl font-semibold heading-font">Vaibhav Chandola</span>
                 </div>
             </div>
+            
+            <div class="text-center md:text-right">
+                <div class="flex justify-center md:justify-end gap-x-8 text-2xl mb-8">
+                    <a href="https://github.com/vaibhav12686" target="_blank" class="hover:text-sky-400">GitHub</a>
+                    <a href="https://www.linkedin.com/in/vaibhav-chandola-30b3941bb/" target="_blank" class="hover:text-sky-400">LinkedIn</a>
+                    <a href="mailto:aish.allada@gmail.com" class="hover:text-sky-400">Email</a>
+                </div>
+                <p class="text-xs text-slate-500">© 2026 Vaibhav Chandola - Designed & Developed</p>
+            </div>
         </div>
-    </footer>
+    </div>
+</footer>
     
     <script>
         /**
